@@ -41,17 +41,17 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![alt text][image1]
+![Distortion-corrected image][image1]
 
 ###Pipeline (single images)
 
 ####1. Provide an example of a distortion-corrected image.
-![alt text][image1]
+![Distortion-corrected image][image1]
 
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color (s channel of HLS color space) and gradient thresholds (l channel of HLS color space) to generate a binary image (see 4th code cell in advanced_lane_finding.ipynb).  Here's an example of my output for this step.
 
-![alt text][image2]
+![Binary thresholded image][image2]
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -60,7 +60,7 @@ a symmetric quadrilaterial on the bottom of the image and tweak it until the two
 on all the test images.
 
 See example of the image along with the quadrilaterial drawn in red.
-![alt text][image3]
+![Bird-eye image][image3]
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -68,7 +68,7 @@ I implemented this using example code from section 33 of the lecture. It essenti
 separating the image into two parts, and then use sliding window to identify peaks in histogram of where the
 binary image threshold occur.
 The code is in sixth code cell in advanced_lane_finding.ipynb, and here is an example image.
-![alt text][image4]
+![Polynomial line finding][image4]
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -78,7 +78,7 @@ For the position of the vehicle, I take the center of the two lanes and then tak
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 The end-to-end pipeline is implemented in the seventh code cell of advanced_lane_finding.ipynb. Here is an example image:
-![alt text][image5]
+![Annotated image][image5]
 
 ---
 
